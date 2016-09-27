@@ -1,0 +1,6 @@
+<li>
+<div class="view">
+  <md-checkbox (click)="toggleTodoComplete" [checked]="todo.complete">{{todo.title}}</md-checkbox>
+  <button md-button color="primary" class="destroy" (click)="removeTodo(todo)">Del</button>
+</div>
+</li>

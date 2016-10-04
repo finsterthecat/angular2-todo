@@ -1,11 +1,20 @@
-import { browser, element, by } from 'protractor/globals';
+import { browser, element, by, protractor } from 'protractor/globals';
+import { ElementFinder } from "protractor";
 
 export class TodoAppPage {
-  navigateTo() {
+  static navigateTo() {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  static getParagraphText() {
+    return element(by.css('app-root md-card-title')).getText();
+  }
+
+  static getInput(): ElementFinder {
+    return element(by.css('app-root md-input input'));
+  }
+
+  static hitEnter() {
+    TodoAppPage.getInput().sendKeys(protractor.Key.ENTER);
   }
 }

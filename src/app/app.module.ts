@@ -14,6 +14,7 @@ import { MdCheckboxModule } from '@angular2-material/checkbox'
 import { MdTooltipModule } from '@angular2-material/tooltip';
 import { MdSliderModule } from '@angular2-material/slider';
 import { MdInputModule } from '@angular2-material/input';
+import { MdToolbarModule } from '@angular2-material/toolbar';
 
 //import {} from '@angular2-material/'
 
@@ -35,7 +36,8 @@ import { TodoComponent } from './todo/todo.component';
     FormsModule,
     HttpModule,
     MdCoreModule.forRoot(), MdCardModule.forRoot(), MdButtonModule.forRoot(), MdRadioModule.forRoot(),
-    MdCheckboxModule.forRoot(), MdTooltipModule.forRoot(), MdSliderModule.forRoot(), MdInputModule.forRoot() ],
+    MdCheckboxModule.forRoot(), MdTooltipModule.forRoot(), MdSliderModule.forRoot(), MdInputModule.forRoot(),
+    MdToolbarModule.forRoot() ],
   providers: [TodoService, Title],
   bootstrap: [AppComponent]
 })

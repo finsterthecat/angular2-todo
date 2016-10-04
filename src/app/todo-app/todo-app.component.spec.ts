@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, inject } from '@angular/core/testing';
+import { TestBed, inject, async } from '@angular/core/testing';
 
 import 'hammerjs';
 
@@ -16,6 +16,8 @@ import { MdRadioModule } from '@angular2-material/radio';
 import { MdCheckboxModule } from '@angular2-material/checkbox';
 import { MdTooltipModule } from '@angular2-material/tooltip';
 import { MdSliderModule } from '@angular2-material/slider';
+import { MdInputModule } from '@angular2-material/input';
+import { MdToolbarModule } from '@angular2-material/toolbar';
 
 import { FormsModule } from '@angular/forms';
 import {TodoComponent} from '../todo/todo.component';
@@ -25,7 +27,7 @@ beforeEach(() => {
     imports: [ FormsModule, MdCoreModule.forRoot(), MdCardModule.forRoot(),
                 MdButtonModule.forRoot(), MdRadioModule.forRoot(),
                 MdCheckboxModule.forRoot(), MdTooltipModule.forRoot(),
-                MdSliderModule.forRoot()  ],
+                MdSliderModule.forRoot(), MdInputModule.forRoot(), MdToolbarModule.forRoot() ],
     declarations: [
       AppComponent, TodoAppComponent, TodoComponent
     ],
@@ -40,4 +42,10 @@ describe('Component: TodoApp', () => {
     expect(component).toBeTruthy();
   }));
 
+  it('should render title in a md-toolbar tag', async(() => {
+    let fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    let compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('md-toolbar').textContent).toContain('To Dos');
+  }));
 });

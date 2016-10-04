@@ -1,9 +1,10 @@
 <section class="todoapp">
   <header class="header">
     <md-card>
-      <md-card-title>To Dos</md-card-title>
+      <md-toolbar color="primary">To Dos</md-toolbar>
       <md-input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title"
-                (keyup.enter)="addTodo()"></md-input>
+                (keyup.enter)="addTodo()" minlength="1"></md-input>
+      <button md-button class="add" color="primary" (click)="addTodo()">Add</button>
     </md-card>
   </header>
   <section class="main" *ngIf="todos.length > 0">

@@ -16,8 +16,10 @@ export class TodoAppComponent {
   constructor(private todoService: TodoService) { }
 
   addTodo() {
-    this.todoService.addTodo(this.newTodo);
-    this.newTodo = new Todo();
+    if (this.newTodo.title) {
+      this.todoService.addTodo(this.newTodo);
+      this.newTodo = new Todo();
+    }
   }
 
   removeTodo(todo: Todo) {

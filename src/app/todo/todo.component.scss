@@ -2,7 +2,6 @@ li {
   cursor: pointer;
   position: relative;
   left: 0;
-  background-color: #EEE;
   margin: .5em;
   padding: .3em 0;
   height: 1.6em;
@@ -18,4 +17,9 @@ app-todo {
   list-style-type: none;
   padding: 0;
   width: 15em;
+}
+md-checkbox {
+  width: 70%;
+  max-width: 70%;
+  display: inline-block;
 }

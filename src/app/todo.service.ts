@@ -45,6 +45,11 @@ export class TodoService {
     return this.todos;
   }
 
+  // Simulate GET /todos/completed
+  getCompletedTodos(): Todo[] {
+    return this.todos.filter(todo => todo.complete);
+  }
+
   // Simulate GET /todos/:id
   getTodoById(id: number): Todo {
     return this.todos

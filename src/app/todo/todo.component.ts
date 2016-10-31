@@ -11,11 +11,16 @@ import { TodoService } from '../todo.service';
 export class TodoComponent {
   @Input() todo: Todo;
   @Output() remove = new EventEmitter();
+  @Output() edit = new EventEmitter();
 
   constructor(private todoService: TodoService) { }
 
   removeTodo() {
     this.remove.emit(this.todo);
+  }
+
+  editTodo() {
+    this.edit.emit(this.todo);
   }
 
   toggleTodoComplete() {

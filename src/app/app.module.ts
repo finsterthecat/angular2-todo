@@ -2,6 +2,7 @@ import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { DragulaModule } from 'ng2-dragula/ng2-dragula';
 
 import 'hammerjs';
 
@@ -35,6 +36,7 @@ import { TodoComponent } from './todo/todo.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    DragulaModule,
     MdCoreModule.forRoot(), MdCardModule.forRoot(), MdButtonModule.forRoot(), MdRadioModule.forRoot(),
     MdCheckboxModule.forRoot(), MdTooltipModule.forRoot(), MdSliderModule.forRoot(), MdInputModule.forRoot(),
     MdToolbarModule.forRoot() ],

@@ -3,7 +3,7 @@ import { TodoAppPage } from './app.po';
 
 describe('todo-app App', function() {
 
-  it('should display message saying To Do', () => {
+  it('should display message saying To Dos', () => {
     TodoAppPage.navigateTo();
     expect(TodoAppPage.getParagraphText()).toEqual('To Dos');
   });

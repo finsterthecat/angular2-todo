@@ -21,10 +21,11 @@ import { MdToolbarModule } from '@angular2-material/toolbar';
 
 import { FormsModule } from '@angular/forms';
 import {TodoComponent} from '../todo/todo.component';
+import { DragulaModule } from 'ng2-dragula/ng2-dragula';
 
 beforeEach(() => {
   TestBed.configureTestingModule({
-    imports: [ FormsModule, MdCoreModule.forRoot(), MdCardModule.forRoot(),
+    imports: [ FormsModule, DragulaModule, MdCoreModule.forRoot(), MdCardModule.forRoot(),
                 MdButtonModule.forRoot(), MdRadioModule.forRoot(),
                 MdCheckboxModule.forRoot(), MdTooltipModule.forRoot(),
                 MdSliderModule.forRoot(), MdInputModule.forRoot(), MdToolbarModule.forRoot() ],

@@ -1,6 +1,8 @@
 <li>
 <div class="view">
-  <md-checkbox (click)="toggleTodoComplete" [checked]="todo.complete">{{todo.title}}</md-checkbox>
+  <md-checkbox [(ngModel)]="todo.complete">
+    {{todo.title}}
+  </md-checkbox>
   <button md-button color="primary" class="destroy" (click)="removeTodo(todo)">Del</button>
   <button md-button color="primary" class="destroy" (click)="editTodo(todo)">Edit</button>
 </div>

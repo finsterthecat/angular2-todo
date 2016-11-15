@@ -42,6 +42,7 @@ export class TodoAppComponent {
     if (this.newTodo.title) {
       this.todoService.addTodo(this.newTodo);
       this.newTodo = new Todo();
+      console.log("addtodo");
     }
   }
 
@@ -53,6 +54,10 @@ export class TodoAppComponent {
     this.newTodo.id = todo.id;
     this.newTodo.title = todo.title;
     this.isUpdateMode = true;
+  }
+
+  clearCompleted() {
+    this.todoService.clearCompleted();
   }
 
   get todos() {

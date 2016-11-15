@@ -29,6 +29,30 @@ describe('Todo Service', () => {
 
   });
 
+  describe('#getCompletedTodos()', () => {
+
+    it('should return an empty array by default', inject([TodoService], (service: TodoService) => {
+      expect(service.getCompletedTodos()).toEqual([]);
+    }));
+
+    it('should return no todos when none complete', inject([TodoService], (service: TodoService) => {
+      let todo1 = new Todo({title: 'Hello 1', complete: false});
+      let todo2 = new Todo({title: 'Hello 2', complete: false});
+      service.addTodo(todo1);
+      service.addTodo(todo2);
+      expect(service.getCompletedTodos()).toEqual([]);
+    }));
+
+    it('should return 1 todo when one complete', inject([TodoService], (service: TodoService) => {
+      let todo1 = new Todo({title: 'Hello 1', complete: false});
+      let todo2 = new Todo({title: 'Hello 2', complete: true});
+      service.addTodo(todo1);
+      service.addTodo(todo2);
+      expect(service.getCompletedTodos()).toEqual([todo2]);
+    }));
+
+  });
+
   describe('#save(todo)', () => {
 
     it('should automatically assign an incrementing id', inject([TodoService], (service: TodoService) => {
@@ -56,7 +80,7 @@ describe('Todo Service', () => {
       expect(service.getAllTodos()).toEqual([]);
     }));
 
-    it('should not removing anything if todo with corresponding id is not found', inject([TodoService], (service: TodoService) => {
+    it('should not remove anything if todo with corresponding id is not found', inject([TodoService], (service: TodoService) => {
       let todo1 = new Todo({title: 'Hello 1', complete: false});
       let todo2 = new Todo({title: 'Hello 2', complete: true});
       service.addTodo(todo1);

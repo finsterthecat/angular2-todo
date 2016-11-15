@@ -40,6 +40,10 @@ export class TodoService {
     return todo;
   }
 
+  clearCompleted() {
+    this.todos = this.todos.filter(todo => !todo.complete);
+  }
+  
   // Simulate GET /todos
   getAllTodos(): Todo[] {
     return this.todos;

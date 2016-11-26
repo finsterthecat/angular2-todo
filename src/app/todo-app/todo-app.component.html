@@ -8,14 +8,13 @@
                 (keyup.enter)="applyChanges()" minlength="1"></md-input>
       <button md-button class="add" color="primary" (click)="applyChanges()">{{isUpdateMode ? "Update" : "Add"}}</button>
       <button md-button class="add" *ngIf="isUpdateMode" color="primary" (click)="cancelChanges()">Cancel</button>
-      <ul class="todo-list" *ngIf="todos.length > 0" [dragula]="'placeholder'">
+      <div class="todo-list" *ngIf="todos.length > 0" [dragula]="'placeholder'">
         <app-todo *ngFor="let todo of todos"
                   [class.completed]="todo.complete"
                   [todo]="todo"
-                  (toggle)="toggleTodo(todo)"
                   (remove)="removeTodo(todo)"
                   (edit)="editTodo(todo)"></app-todo>
-      </ul>
+      </div>
     </md-card>
   </section>
   <footer class="footer" *ngIf="todos.length > 0">

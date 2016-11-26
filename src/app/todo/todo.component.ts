@@ -10,7 +10,6 @@ export class TodoComponent {
   @Input() todo: Todo;
   @Output() remove = new EventEmitter();
   @Output() edit = new EventEmitter();
-  @Output() toggle = new EventEmitter();
 
   constructor() { }
 
